@@ -465,7 +465,7 @@
     position: fixed;
     top: 0;
     right: 0;
-    right: -270px;
+    right: -200px;
     display: flex;
     flex-direction: column;
     width: 150px;
@@ -484,7 +484,7 @@
     cursor: pointer;
   }
   #header .content{
-    margin-left: -20px;
+    margin-left:-50px;
   }
   #header .content span {
     font-size: 30px;
@@ -497,7 +497,7 @@
     width: 250px;
     height: 300px;
     top: 12%;
-    left: 45%;
+    left: 30%;
     color: black;
     border-radius: 10px;
     padding: 5px;
