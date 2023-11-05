@@ -4,21 +4,21 @@
 // Array of testimonies
 var testimonies = [
     {
-        name: 'Rajesh',
+        name: 'Allen',
         text: 'I am very happy with the service. I am able to get fresh vegetables and fruits at my doorstep. The delivery is also very fast.',
-        image: 'images/testimony1.jpg'
+        image: './images/Ramesh.jpg'
 
     },
     {
-        name: 'Suresh',
-        text: 'I am very happy with the service. I am able to get fresh vegetables and fruits at my doorstep. The delivery is also very fast.',
-        image: 'images/testimony2.jpg'
+        name: 'Harry',
+        text: 'This is the best service I have ever used. I am able to get fresh vegetables and fruits at my doorstep. The delivery is also very fast.',
+        image: './images/Suresh.jpg'
 
     },
     {
-        name: 'Ramesh',
-        text: 'I am very happy with the service. I am able to get fresh vegetables and fruits at my doorstep. The delivery is also very fast.',
-        image: 'images/testimony3.jpg'
+        name: 'Ron',
+        text: ' I am able to get fresh vegetables and fruits at my doorstep. The delivery is also very fast. This is the best service I have ever used.',
+        image: './images/Rajesh.jpg'
 
     },
 ];
