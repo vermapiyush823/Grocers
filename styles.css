@@ -448,6 +448,10 @@
 
 
 @media only screen and (max-width: 600px) {
+
+  #header{
+    background: url(./images/phone_banner.png);
+  }
   #header .nav {
     /* flex-direction: column; */
     gap: 10px;
