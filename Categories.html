@@ -1,0 +1,303 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="categories.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Poppins:wght@300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="nav">
+        <h1>Grocers</h1>
+        <div>
+            <ul id="sidemenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="orders.html">Orders</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+
+        </div>
+        <div class="search">
+            <input type="text" name="Search" placeholder="Search Anything...">
+            <a href="#"><i class="fas fa-search"></i></a>
+        </div>
+        <div class="cart_login">
+            <a href="#" class="cart"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+        </div>
+    </div>
+    <div id="cartDialog">
+        <h2>Cart</h2>
+        <span class="close" onclick="closeDialog()"><i class="fa-solid fa-xmark"></i></span>
+        <ul id="cartItems">
+            <!-- Cart items will be appended here by JavaScript -->
+        </ul>
+        <div>
+            <button class="btn btn-primary">Checkout</button>
+        </div>
+    </div>
+    <div class="container_big">
+        <div class="left-container">
+            <h2>Categories</h2>
+            <ul>
+                <li><a href="" onclick="categorizer(event)">Vegetables</a></li>
+                <li><a href="" onclick="categorizer(event)">Fruits</a></li>
+                <li><a href="" onclick="categorizer(event)">Dairy</a></li>
+                <li><a href="" onclick="categorizer(event)">Bakery</a></li>
+                <li><a href="" onclick="categorizer(event)">Snacks</a></li>
+                <li><a href="" onclick="categorizer(event)">Beverages</a></li>
+                <li><a href="" onclick="categorizer(event)">Personal Care</a></li>
+            </ul>
+        </div>
+        <div class="right-container">
+            <section id="catalog">
+                <h1></h1>
+                <div class="container1">
+                    <!-- Products will be appended here by JavaScript -->
+                </div>
+            </section>
+        </div>
+    </div>
+    <section id="footer">
+        <div class="container">
+            <div class="quick-links">
+                <h3 style="color: #fff;">Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+
+                    <li><a href="#">Vegetables</a></li>
+
+                    <li><a href="#">Fruits</a></li>
+
+                    <li><a href="#">About Us</a></li>
+
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="follow-us quick-links">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                </ul>
+            </div>
+            <div class="contact quick-links follow-us">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-phone-square"></i> 9350498328</a></li>
+                    <li><a href="vermapiyush823@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+                </ul>
+            </div>
+        </div>
+        <p style="text-align: center; margin: 0%;">Copyright
+            <span>&copy;</span>
+            2023
+            <span>Grocers</span>
+            All rights reserved.
+        </p>
+    </section>
+    <script>
+        var products = [
+            { name: 'Tomato', price: 60, imgSrc: "./images/tomato.jpg", id: 1, category: 'Vegetables' ,avgRating: 4.5, noOfReviews: 450},
+            { name: 'Milk', price: 50, imgSrc: "./images/milk.png", id: 2, category: 'Dairy' ,avgRating: 4, noOfReviews: 100},
+            { name: 'Potato', price: 40, imgSrc: "./images/potato.png", id: 3, category: 'Vegetables',avgRating: 3.5, noOfReviews: 743 },
+            { name: 'Onion', price: 30, imgSrc: "./images/onion.png", id: 4, category: 'Vegetables' ,avgRating: 5.0, noOfReviews: 232},
+            { name: 'Cabbage', price: 20, imgSrc: "./images/cabbage.png", id: 5, category: 'Vegetables' ,avgRating: 2.5, noOfReviews: 432},
+            { name: 'Cauliflower', price: 10, imgSrc: "./images/couliflower.png", id: 6, category: 'Vegetables' ,avgRating: 3, noOfReviews: 453},
+            { name: 'Carrot', price: 60, imgSrc: "./images/carrot.png", id: 7, category: 'Vegetables' ,avgRating: 5, noOfReviews: 565},
+            { name: 'Cucumber', price: 50, imgSrc: "./images/cucumber.png", id: 8, category: 'Vegetables' ,avgRating: 4.5, noOfReviews: 654},
+            { name: 'Apple', price: 120, imgSrc: "./images/apple.png", id: 9, category: 'Fruits',avgRating: 4, noOfReviews: 545 },
+            { name: 'Orange', price: 80, imgSrc: "./images/orange.png", id: 10, category: 'Fruits' ,avgRating: 4.5, noOfReviews: 213},
+            { name: 'Cheese', price: 200, imgSrc: "./images/cheese.png", id: 11, category: 'Dairy' ,avgRating: 4.5, noOfReviews: 565},
+            { name: 'Bread', price: 40, imgSrc: "./images/bread.png", id: 12, category: 'Bakery' ,avgRating: 3.5, noOfReviews:321},
+            { name: 'Cake', price: 300, imgSrc: "./images/cake.png", id: 13, category: 'Bakery',avgRating: 3, noOfReviews: 765 },
+            { name: 'Chips', price: 150, imgSrc: "./images/chips.png", id: 14, category: 'Snacks' ,avgRating: 2.5, noOfReviews: 112},
+            { name: 'Cola', price: 45, imgSrc: "./images/cola.png", id: 15, category: 'Beverages',avgRating: 1, noOfReviews: 121 },
+            { name: 'Shampoo', price: 250, imgSrc: "./images/shampoo.png", id: 16, category: 'Personal Care',avgRating: 4.5, noOfReviews: 833 },
+            { name: 'Toothpaste', price: 85, imgSrc: "./images/toothpaste.png", id: 17, category: 'Personal Care',avgRating: 4.5, noOfReviews:323 },
+            { name: 'Banana', price: 60, imgSrc: "./images/banana.png", id: 18, category: 'Fruits' ,avgRating: 5, noOfReviews: 434},
+            { name: 'Grapes', price: 100, imgSrc: "./images/grapes.jpg", id: 19, category: 'Fruits',avgRating: 5, noOfReviews: 656 },
+            { name: 'Yogurt', price: 50, imgSrc: "./images/yogurt.png", id: 20, category: 'Dairy' ,avgRating: 3, noOfReviews: 133},
+            { name: 'Butter', price: 150, imgSrc: "./images/butter.png", id: 21, category: 'Dairy',avgRating: 3.5, noOfReviews: 586 },
+            { name: 'Croissant', price: 40, imgSrc: "./images/croissant.png", id: 22, category: 'Bakery' ,avgRating: 4, noOfReviews: 434},
+            { name: 'Donut', price: 30, imgSrc: "./images/donut.png", id: 23, category: 'Bakery',avgRating: 4, noOfReviews: 984 },
+            { name: 'Cookies', price: 70, imgSrc: "./images/cookie.png", id: 24, category: 'Snacks' ,avgRating: 4.5, noOfReviews: 765},
+            { name: 'Popcorn', price: 80, imgSrc: "./images/popcorn.png", id: 25, category: 'Snacks',avgRating: 4, noOfReviews: 100 },
+            { name: 'Juice', price: 60, imgSrc: "./images/juice.png", id: 26, category: 'Beverages',avgRating: 5, noOfReviews: 900 },
+            { name: 'Water', price: 20, imgSrc: "./images/water.png", id: 27, category: 'Beverages',avgRating: 3.5, noOfReviews: 450 },
+            { name: 'Soap', price: 40, imgSrc: "./images/soap.png", id: 28, category: 'Personal Care' ,avgRating: 3, noOfReviews: 380},
+            { name: 'Lotion', price: 200, imgSrc: "./images/lotion.png", id: 29, category: 'Personal Care',avgRating: 4.5, noOfReviews: 500 },
+            { name: 'Peach', price: 90, imgSrc: "./images/peach.png", id: 30, category: 'Fruits',avgRating: 3.5, noOfReviews: 80 },
+            { name: 'Cream', price: 100, imgSrc: "./images/cream.png", id: 31, category: 'Dairy',avgRating: 2.5, noOfReviews: 700 },
+            { name: 'Muffin', price: 50, imgSrc: "./images/muffin.png", id: 32, category: 'Bakery' ,avgRating: 1.5, noOfReviews: 120},
+            { name: 'Candy', price: 10, imgSrc: "./images/candy.png", id: 33, category: 'Snacks' ,avgRating: 4, noOfReviews: 230},
+            { name: 'Tea', price: 30, imgSrc: "./images/tea.png", id: 34, category: 'Beverages',avgRating: 4, noOfReviews: 250 },
+            { name: 'Toothbrush', price: 20, imgSrc: "./images/toothbrush.png", id: 35, category: 'Personal Care',avgRating: 4.5, noOfReviews: 300 },
+            { name: 'Pear', price: 80, imgSrc: "./images/pear.png", id: 36, category: 'Fruits',avgRating: 4.5, noOfReviews: 100 },
+            { name: 'Ice Cream', price: 100, imgSrc: "./images/ice-cream.png", id: 37, category: 'Dairy',avgRating: 4.5, noOfReviews: 130 },
+        ];
+
+        function categorizer(event) {
+            // Prevent the default action of the link
+            event.preventDefault();
+
+            // Get the category from the link text
+            var category = event.target.innerText;
+            var catalog = document.getElementById('catalog');
+            var h1 = catalog.getElementsByTagName('h1')[0];
+
+            // Update the h1 content with the category of the first product
+            h1.textContent = category;
+
+
+            // Get the product container
+            var containerDiv = document.querySelector('.container1');
+            // var h1 = document.querySelector('.container1 h1');
+            // h1.innerText = category;
+
+
+            // Clear the current products
+            containerDiv.innerHTML = '';
+
+            // Filter the products for this category
+            var productsForCategory = products.filter(function (product) {
+                return product.category === category;
+            });
+
+            // Append the products to the container
+            productsForCategory.forEach(function (product) {
+                var productDiv = document.createElement('div');
+                productDiv.className = 'containers';
+                var img = document.createElement('img');
+                img.src = product.imgSrc;
+                productDiv.appendChild(img);
+
+                var h3 = document.createElement('h3');
+                h3.textContent = product.name;
+                productDiv.appendChild(h3);
+
+
+
+                var span = document.createElement('span');
+                span.innerHTML = '₹' + product.price + '/Kg <p id="addToCart" >Add to Cart</p>';
+                productDiv.appendChild(span);
+                containerDiv.appendChild(productDiv);
+            });
+        }
+        window.onload = function () {
+            // Create a mock event object
+            var event = {
+                preventDefault: function () { },
+                target: {
+                    innerText: 'Vegetables'
+                }
+            };
+
+            // Call the categorizer function with the mock event
+            categorizer(event);
+        };
+    </script>
+    <script>
+        document.querySelector('.cart').addEventListener('click', function (event) {
+            event.preventDefault();
+
+            var cartItems = [
+                { name: 'Tomato', price: 60, imgSrc: '', id: 1 },
+                { name: 'Milk', price: 50, imgSrc: '', id: 2 },
+                { name: 'Potato', price: 40, imgSrc: '', id: 3 },
+                { name: 'Onion', price: 30, imgSrc: '', id: 4 },
+                // Add more products as needed
+            ];
+
+            // Get the cart items container
+            var container = document.querySelector('#cartItems');
+
+            cartItems.forEach(function (item) {
+                var itemElement = document.createElement('li');
+                var name = document.createElement('span');
+                name.innerText = item.name;
+                itemElement.appendChild(name);
+
+                var price = document.createElement('span');
+                price.innerText = ' ' + '₹' + item.price;
+
+                var addQuantity = document.createElement('i');
+                addQuantity.className = 'fa-solid fa-plus';
+                var quantity = 1;
+                addQuantity.addEventListener('click', function () {
+                    // Increase the quantity
+                    quantity++;
+
+                    // Update the quantity display
+                    quantity1.innerText = ' ' + quantity;
+
+                    // Update the price
+                    price.innerText = ' ' + '₹' + item.price * quantity;
+                });
+
+                var subQuantity = document.createElement('i');
+                subQuantity.className = 'fa-solid fa-minus';
+                subQuantity.addEventListener('click', function () {
+                    // Decrease the quantity
+                    if (quantity > 1) {
+                        quantity--;
+
+                        // Update the quantity display
+                        quantity1.innerText = ' ' + quantity;
+
+                        // Update the price
+                        price.innerText = ' ' + '₹' + item.price * quantity;
+                    } else {
+                        // Remove the item from the cart
+                        itemElement.remove();
+
+                        // Find the index of the item in the cartItems array
+                        var index = cartItems.indexOf(item);
+
+                        // Remove the item from the cartItems array
+                        if (index > -1) {
+                            cartItems.splice(index, 1);
+                        }
+                    }
+                });
+                var quantity1 = document.createElement('span');
+                quantity1.innerText = ' ' + quantity;
+                itemElement.appendChild(subQuantity);
+                itemElement.appendChild(quantity1);
+                itemElement.appendChild(addQuantity);
+                itemElement.appendChild(price);
+                container.appendChild(itemElement);
+            });
+
+            // Show the dialog
+            document.querySelector('#cartDialog').style.display = 'block';
+        });
+        function closeDialog() {
+            document.getElementById('cartDialog').style.display = 'none';
+        }
+    </script>
+    <script>
+        function openmenu() {
+            document.getElementById('sidemenu').style.width = "100%";
+            document.getElementById('sidemenu').style.transition = "0.5s";
+        }
+        function closemenu() {
+            document.getElementById('sidemenu').style.width = "0%";
+            document.getElementById('sidemenu').style.transition = "0.5s";
+        }
+    </script>
+</body>
+
+</html>

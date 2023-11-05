@@ -1,0 +1,350 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+#header {
+  background: #FFFFDD;
+  color: black;
+  height: 100vh;
+}
+#header .nav {
+  background-color: #7e9960;
+  display: flex;
+  padding: 12px 0;
+  justify-content: space-around;
+  align-items: center;
+}
+#header .nav h1 {
+  margin: 0;
+}
+.nav ul {
+  display: flex;
+  margin: 0%;
+}
+.nav ul .fa-times, .fa-bars{
+  display: none;
+}
+.nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 0%;
+  gap: 15px;
+}
+.nav ul li a {
+  text-decoration: none;
+  color: black;
+  position: relative;
+  margin: 10px;
+}
+.nav ul li a::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background: black;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  transition: 0.5s;
+}
+.nav ul li a:hover::after {
+  width: 100%;
+}
+.nav .search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav .search input {
+  padding: 7px;
+  border-radius: 20px;
+  text-align: center;
+  border: none;
+  background: #ffffff93;
+  border: 1px solid black;
+
+}
+.nav .search input:hover {
+  background: rgba(0, 0, 0, 0.644);
+  color: #fff !important;
+}
+.nav .search a .fa-search {
+  padding: 7px;
+  font-size: 20px;
+  border: none;
+  color: black;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+.nav .search a .fa-search:hover {
+  background-color: rgba(0, 0, 0, 0.644);
+  transform: scale(1.1);
+  color: #fff;
+}
+.cart {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  transition: transform 0.3s;
+}
+.cart:hover {
+  transform: scale(1.1);
+  color: #000;
+}
+.cart_login {
+  display: flex;
+  align-items: center;
+}
+
+/* Content */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-right: 300px;
+  margin-top: 90px;
+  gap: 100px;
+  flex-wrap: wrap;
+}
+.container .product .product-image {
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border: 2px solid black;
+  background-color: rgba(255, 255, 255, 0.543) ;
+}
+.container .product .product-image img {
+  width: 400px;
+  height: 400px;
+  transition: transform 0.5s;
+}
+.container .product .product-image img:hover {
+  transform: scale(1.1);
+}
+.container .product .stars{
+  margin-top: 40px;
+  text-align: center;
+  font-size: 20px;
+  color: #333;
+}
+.container .product-info{
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  color: #333;
+  padding-right: 100px;
+}
+.container .product-info h2{
+  font-size: 60px;
+  margin-bottom: 30px;
+}
+.container .product-info p{
+  font-size: 30px;
+  display: inline-block;
+}
+.container .product-price{
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-direction: column;
+}
+.container .product-info .product-price  h3{
+  display: inline-block;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+/* footer */
+
+#footer {
+  background-color: #A2C579;
+  color: #000;
+  padding: 50px 0;
+  padding-bottom: 0;
+}
+#footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  color: #000;
+  justify-content: space-between;
+  padding-right: 0%;
+}
+#footer .container .quick-links ul {
+  display: flex;
+  flex-direction: column;
+}
+#footer .container .quick-links h3 {
+  font-size: 40px;
+  font-weight: 500;
+  color: #000 !important;
+  margin-bottom: 20px;
+}
+
+#footer .container .quick-links ul li {
+  margin: 10px 0;
+  display: inline-block;
+}
+
+#footer .container .quick-links ul li a {
+  text-decoration: none;
+  color: #000 ;
+  position: relative;
+  margin: 10px;
+  font-size: 20px;
+}
+#footer .container .quick-links ul li a::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background: black;
+  position: absolute;
+  left: 0px;
+  bottom: -2px;
+  transition: 0.5s;
+}
+#footer .container .quick-links.follow-us ul li a::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background: black;
+  position: absolute;
+  left: 25px;
+  bottom: -2px;
+  transition: 0.5s;
+}
+#footer .container .quick-links.follow-us ul li i {
+  transition: transform 0.5s;
+}
+#footer .container .quick-links.follow-us ul li i:hover {
+  transform: scale(1.5);
+}
+#footer .container .quick-links ul li a:hover::after {
+  width: 100%;
+}
+#footer .container .quick-links.follow-us ul li a:hover::after {
+  width: 80%;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .nav {
+    /* flex-direction: column; */
+    gap: 10px;
+  }
+  .nav .search {
+    display: none;
+  }
+  .nav .fas {
+    display: block;
+    font-size: 30px;
+    color: #fff;
+  }
+  .nav ul {
+    background: #2b264a;
+    position: fixed;
+    top: 0;
+    right: 0;
+    right: -270px;
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 2;
+  }
+  .nav ul li {
+    display: block;
+    margin: 25px;
+  }
+  .nav ul .fas {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+  }  
+.container{
+  padding: 0%;
+  gap: 0;;
+}
+.container .product{
+  padding: 0%;
+  gap: 0;
+  display: flex;
+  flex-direction: column;
+}
+.container .product .product-image{
+  justify-content: center;
+  display: block;
+  align-items: center;
+  width: 370px;
+  height: 370px;
+}
+.container .product .product-image img{
+  width: 100%;
+  height: 100%;
+}
+.container .product .stars{
+  text-align: center;
+  font-size: 15px;
+}
+.container .product-info{
+  display: flex;  
+  flex-direction: column;
+
+  padding: 0%;
+  gap: 0;
+  text-align: center;
+}
+.container .product-info h2{
+  font-size: 30px;
+  margin-bottom: 0px;
+}
+.container .product-price{
+  font-size: 30px;
+  display: flex;
+  gap: 0;
+  justify-content: center;
+  flex-direction: column;
+}
+.container .product-price h3{
+  display: inline-block;
+  font-size: 15px;
+  /* margin-bottom: 0px; */
+}
+
+#footer{
+  margin-top: 100px;
+  padding-bottom: 10px;
+}
+#footer .container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  padding:10px;
+}
+#footer .container .quick-links {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+}
+#footer .container .quick-links h3 {
+  font-size: 20px;
+}
+#footer .container .quick-links ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#footer .container .quick-links ul li {
+  margin-top:5px;
+}
+#footer .container .quick-links ul li a {
+  font-size: 10px;
+}
+}
+
+

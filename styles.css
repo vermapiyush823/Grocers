@@ -1,0 +1,636 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+#header {
+  /* background: url(https://assets-global.website-files.com/641d54fdcc011edcca41c54a/6481af75469f9bcb5e623867_how%20to%20save%20money%20on%20groceries%20in%20india.jpg);
+   */
+  background: url(./images/banner.png);
+  color: rgba(0, 0, 0, 0.685);
+  height: 100vh;
+}
+#header .nav {
+  background-color: #33333370;
+  display: flex;
+  color: #000;
+  padding: 12px 0;
+  justify-content: space-around;
+  align-items: center;
+}
+#header .nav h1 {
+  margin: 0;
+}
+#header .nav .fa-bars , .fa-times{
+  display: none;
+}
+.nav ul {
+  display: flex;
+  margin: 0%;
+}
+
+.nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 0%;
+  gap: 15px;
+}
+.nav ul li a {
+  text-decoration: none;
+  color: #000;
+  position: relative;
+  margin: 10px;
+}
+.nav ul li a::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background:black;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  transition: 0.5s;
+}
+.nav ul li a:hover::after {
+  width: 100%;
+}
+.nav .search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav .search input {
+  padding: 7px;
+  border-radius: 20px;
+  text-align: center;
+  border: none;
+  background: #ffffff96;
+  border: 1px solid black;
+}
+.nav .search input:hover {
+  background: rgba(0, 0, 0, 0.501);
+}
+.nav .search a .fa-search {
+  padding: 7px;
+  font-size: 20px;
+  border: none;
+  color: black;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+.nav .search a .fa-search:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.501);
+  transform: scale(1.1);
+}
+.cart {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  transition: transform 0.3s;
+}
+.cart:hover {
+  transform: scale(1.1);
+  color: black;
+}
+.cart_login {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.cart_login .btn {
+  border-radius: 20px;
+  font-weight: bold;
+  transition: transform 0.3s ease-in-out;
+}
+.cart_login .btn:hover {
+  transform: scale(1.1);
+}
+
+#header .content {
+  padding-top: 150px;
+  padding-left: 100px;
+}
+#header .content span {
+  display: block;
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+#header .content p {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  animation-name: moveInRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+#header .content a {
+  animation-name: moveDown;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+@keyframes moveDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translatex(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translatex(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+.content .btn-dark {
+  border-radius: 20px;
+  background: #636363;
+  transition: transform 0.5s;
+}
+.content .btn-dark:hover {
+  transform: scale(1.1);
+  background: #333;
+}
+
+#cartDialog {
+  display: none;
+  position: fixed;
+  width: 300px;
+  height: 400px;
+  top: 12%;
+  left: 79%;
+  border-radius: 10px;
+  color: #2b264a;
+  background: white;
+  box-shadow: 1px 0px 10px 1px black;
+  padding: 10px;
+  overflow-y: auto;
+  z-index: 10;
+}
+#cartDialog .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  cursor: pointer;
+}
+#cartDialog .btn{
+  margin-left: 56%;
+  background-color: #2b264a;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+#cartDialog ul li{
+  list-style: none;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 2px solid black;
+  padding: 10px;
+  margin-left: 0;
+  text-align: center;
+}
+
+#cartDialog ul li span{
+  font-size: 15px;
+  margin-top: 5px;
+  font-weight: 700;
+}
+#cartDialog ul li i{
+  border: none;
+  padding-bottom: 0%;
+  padding-top: 7px;
+  border-radius: 5px;
+  background-color: #2b264a;
+  color: white;
+  font-size: 15px;
+  padding: 0 5px;
+  padding-top: 7px;
+  cursor: pointer;
+}
+
+#cartDialog ul li i:hover{
+  background-color: #fff;
+  color: #2b264a;
+  border: 1px solid #2b264a;
+}
+
+/* Catalogue */
+
+#catalog {
+  padding: 50px 0;
+  background-color: #F5F5DC;
+}
+#catalog .catalog-heading {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 60px;
+  font-weight: 500;
+}
+#catalog .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  transition: all 0.5s ease-in-out;
+}
+#catalog .container .containers {
+  width: 250px;
+  height: 300px;
+  border: 1px solid black;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  transition: opacity 10s ease;
+  transition: transform 2s ease;
+}
+#catalog .container {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+#catalog.show-animate .container {
+  transform: translateX(0);
+  opacity: 1;
+}
+#catalog .container .containers:hover {
+  box-shadow: 0 0 10px 0px #333;
+}
+#catalog .container .containers img {
+  border-radius: 10px;
+  width: 150px;
+  height: 150px;
+}
+#catalog .container .containers h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+#catalog .container .containers span a {
+  text-decoration: none;
+  margin-left: 10px;
+  padding: 4px;
+  color: inherit;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+#catalog .container .containers span a:hover {
+  background-color: #2b264a;
+  color: #fff;
+}
+
+#catalog .container .containers p {
+  margin: 0%;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Testimonies */
+
+#Testimonies {
+  padding: 50px 0;
+  background-color: #FAF8ED;
+  text-align: center;
+}
+#Testimonies .container {
+  margin-top: 40px;
+  padding: 30px;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 80%;
+  gap: 40px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px 0px #333;
+  transition: all 0.5s ease-in-out;
+}
+.testimonyimage1 {
+  width: 250px;
+  height: 250px;
+  transform: scale(1.1);
+  border: 1px solid black;
+  box-shadow: 0 0 10px 0px #333;
+  border-radius: 50%;
+}
+.testimony {
+  padding-top: 40px;
+  padding-left: 20px;
+  box-shadow: -10px 0 10px -10px rgba(0, 0, 0, 0.5);
+  text-align: left;
+}
+#Testimonies .container {
+  transform: scale(0.7);
+}
+#Testimonies.show-animate .container {
+  transform: scale(1);
+}
+#Testimonies .container .testimony ul {
+  display: flex;
+  margin-top: 100px;
+  margin-left: 40%;
+  column-gap: 10px;
+}
+#Testimonies .container .testimony ul li {
+  list-style: none;
+}
+
+/* footer */
+
+#footer {
+  background-color: #2b264a;
+  color: #fff;
+  padding: 50px 0;
+  padding-bottom: 0;
+}
+#footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#footer .container .quick-links ul {
+  display: flex;
+  flex-direction: column;
+}
+#footer .container .quick-links h3 {
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+#footer .container .quick-links ul li {
+  margin: 10px 0;
+  display: inline-block;
+}
+
+#footer .container .quick-links ul li a {
+  text-decoration: none;
+  color: white;
+  position: relative;
+  font-size: 20px;
+}
+
+#footer .container .quick-links ul li a {
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  margin: 10px;
+}
+#footer .container .quick-links ul li a::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background: white;
+  position: absolute;
+  left: 0px;
+  bottom: -2px;
+  transition: 0.5s;
+}
+#footer .container .quick-links.follow-us ul li a::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background: white;
+  position: absolute;
+  left: 25px;
+  bottom: -2px;
+  transition: 0.5s;
+}
+#footer .container .quick-links.follow-us ul li i {
+  transition: transform 0.5s;
+}
+#footer .container .quick-links.follow-us ul li i:hover {
+  transform: scale(1.5);
+}
+#footer .container .quick-links ul li a:hover::after {
+  width: 100%;
+}
+#footer .container .quick-links.follow-us ul li a:hover::after {
+  width: 80%;
+}
+
+
+@media only screen and (max-width: 600px) {
+  #header .nav {
+    /* flex-direction: column; */
+    gap: 10px;
+  }
+  #header .nav .search {
+    display: none;
+  }
+  #header .nav .fas {
+    display: block;
+    font-size: 30px;
+    color: #fff;
+  }
+  .nav ul {
+    background: #2b264a;
+    position: fixed;
+    top: 0;
+    right: 0;
+    right: -270px;
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 2;
+  }
+  .nav ul li {
+    display: block;
+    margin: 25px;
+  }
+  .nav ul .fas {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+  }
+  #header .content{
+    margin-left: -20px;
+  }
+  #header .content span {
+    font-size: 30px;
+  }
+  #header .content p {
+    font-size: 15px;
+  }
+  
+  #cartDialog {
+    width: 250px;
+    height: 300px;
+    top: 12%;
+    left: 45%;
+    color: #2b264a;
+    border-radius: 10px;
+    padding: 5px;
+  }
+  #cartDialog .close {
+    padding: 10px;
+  }
+  #cartDialog .btn{
+    margin-left: 56%;
+    background-color: #2b264a;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  #cartDialog ul li{
+    list-style: none;
+    margin-top: 20px;
+    font-size: 10px;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid black;
+    padding: 10px;
+    margin-left: 0;
+    text-align: center;
+  }
+  #catalog .container .containers span a {
+    text-decoration: none;
+    color: inherit;
+    border-radius: 4px;
+    border: 1px solid black;
+  }
+  #catalog .container .containers span a:hover {
+    background-color: #2b264a;
+    color: #fff;
+  }
+  #cartDialog ul li span:first-child{
+    font-size: 15px;
+    margin-top: 5px;
+    font-weight: 700;
+  }
+  #cartDialog ul li span:last-child{
+    font-size: 15px;
+    margin-top: 5px;
+    font-weight: 700;
+  }
+  #catalog .catalog-heading {
+    font-size: 30px;
+    text-align: center;
+  }
+
+
+
+  #catalog .container .containers {
+    width: 150px;
+    height: 200px;
+  }
+  #catalog .container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  #catalog .container .containers h3 {
+    font-size: 20px;
+  }
+  #catalog .container .containers p {
+    font-size: 10px;
+  }
+  #catalog .container .containers span a {
+    font-size: 10px;
+  }
+  
+  #Testimonies {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #Testimonies .container {
+    width: 80%;
+
+    padding: 10px;
+    gap: 20px;
+    /* margin-left:20px0; */
+  }
+  #Testimonies .container .image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+
+    padding: 0%;
+  }
+  #Testimonies .container .testimonyimage1 {
+    width: 100px;
+    height: 100px;
+  }
+  #Testimonies .container .testimony{
+    margin-left: 10px;
+  }
+  #Testimonies .container .testimony h2 {
+    font-size: 20px;
+  }
+  #Testimonies .container .testimony p {
+    font-size: 10px;
+  }
+  #footer .container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+  }
+  #footer .container .quick-links {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+  }
+  #footer .container .quick-links h3 {
+    font-size: 20px;
+  }
+  #footer .container .quick-links ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #footer .container .quick-links ul li {
+    margin-top:5px;
+  }
+  #footer .container .quick-links ul li a {
+    font-size: 10px;
+  }
+  #footer{
+    padding-bottom: 10px;
+  }
+
+}

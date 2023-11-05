@@ -1,0 +1,188 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Poppins:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="products.css">
+</head>
+
+<body>
+    <section id="header">
+        <div class="nav">
+            <h1>Grocers</h1>
+            <div>
+                <ul id="sidemenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Categories.html">Categories</a></li>
+                    <li><a href="orders.html">Orders</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </div>
+            <div class="search">
+                <input type="text" name="Search" placeholder="Search Anything...">
+                <a href="#"><i class="fas fa-search"></i></a>
+            </div>
+            <div class="cart_login">
+                <a href="#" class="cart"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="product">
+                <div class="product-image">
+                    <img src="" alt="">
+                    <!-- stars  -->
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span></span>
+                </div>
+            </div>
+            <div class="product-info">
+                <h2></h2>
+                <p></p>
+                <div class="product-price">
+                    <a href="#" class="btn btn-dark">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section id="footer">
+        <div class="container">
+            <div class="quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+
+                    <li><a href="#">Vegetables</a></li>
+
+                    <li><a href="#">Fruits</a></li>
+
+                    <li><a href="#">About Us</a></li>
+
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="follow-us quick-links">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                </ul>
+            </div>
+            <div class="contact quick-links follow-us">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-phone-square"></i> 9350498328</a></li>
+                    <li><a href="vermapiyush823@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+                </ul>
+            </div>
+        </div>
+        <p style="text-align: center; margin: 0%;">Copyright
+            <span>&copy;</span>
+            2023
+            <span>Grocers</span>
+            All rights reserved.
+        </p>
+    </section>
+    <script>
+        // Get the id parameter from the URL
+        var id = location.search.split('id=');
+        id = id[1];
+        var products = [
+            { name: 'Tomato', price: 60, imgSrc: "./images/tomato.jpg", id: 1, category: 'Vegetables' ,avgRating: 4.5, noOfReviews: 450},
+            { name: 'Milk', price: 50, imgSrc: "./images/milk.png", id: 2, category: 'Dairy' ,avgRating: 4, noOfReviews: 100},
+            { name: 'Potato', price: 40, imgSrc: "./images/potato.png", id: 3, category: 'Vegetables',avgRating: 3.5, noOfReviews: 743 ,info: 'Tomatoes are a major dietary source of the antioxidant lycopene.'},
+            { name: 'Onion', price: 30, imgSrc: "./images/onion.png", id: 4, category: 'Vegetables' ,avgRating: 5.0, noOfReviews: 232},
+            { name: 'Cabbage', price: 20, imgSrc: "./images/cabbage.png", id: 5, category: 'Vegetables' ,avgRating: 2.5, noOfReviews: 432},
+            { name: 'Cauliflower', price: 10, imgSrc: "./images/couliflower.png", id: 6, category: 'Vegetables' ,avgRating: 3, noOfReviews: 453},
+            { name: 'Carrot', price: 60, imgSrc: "./images/carrot.png", id: 7, category: 'Vegetables' ,avgRating: 5, noOfReviews: 565},
+            { name: 'Cucumber', price: 50, imgSrc: "./images/cucumber.png", id: 8, category: 'Vegetables' ,avgRating: 4.5, noOfReviews: 654},
+            { name: 'Apple', price: 120, imgSrc: "./images/apple.png", id: 9, category: 'Fruits',avgRating: 4, noOfReviews: 545 },
+            { name: 'Orange', price: 80, imgSrc: "./images/orange.png", id: 10, category: 'Fruits' ,avgRating: 4.5, noOfReviews: 213},
+            { name: 'Cheese', price: 200, imgSrc: "./images/cheese.png", id: 11, category: 'Dairy' ,avgRating: 4.5, noOfReviews: 565},
+            { name: 'Bread', price: 40, imgSrc: "./images/bread.png", id: 12, category: 'Bakery' ,avgRating: 3.5, noOfReviews:321},
+            { name: 'Cake', price: 300, imgSrc: "./images/cake.png", id: 13, category: 'Bakery',avgRating: 3, noOfReviews: 765 },
+            { name: 'Chips', price: 150, imgSrc: "./images/chips.png", id: 14, category: 'Snacks' ,avgRating: 2.5, noOfReviews: 112},
+            { name: 'Cola', price: 45, imgSrc: "./images/cola.png", id: 15, category: 'Beverages',avgRating: 1, noOfReviews: 121 },
+            { name: 'Shampoo', price: 250, imgSrc: "./images/shampoo.png", id: 16, category: 'Personal Care',avgRating: 4.5, noOfReviews: 833 },
+            { name: 'Toothpaste', price: 85, imgSrc: "./images/toothpaste.png", id: 17, category: 'Personal Care',avgRating: 4.5, noOfReviews:323 },
+            { name: 'Banana', price: 60, imgSrc: "./images/banana.png", id: 18, category: 'Fruits' ,avgRating: 5, noOfReviews: 434},
+            { name: 'Grapes', price: 100, imgSrc: "./images/grapes.jpg", id: 19, category: 'Fruits',avgRating: 5, noOfReviews: 656 },
+            { name: 'Yogurt', price: 50, imgSrc: "./images/yogurt.png", id: 20, category: 'Dairy' ,avgRating: 3, noOfReviews: 133},
+            { name: 'Butter', price: 150, imgSrc: "./images/butter.png", id: 21, category: 'Dairy',avgRating: 3.5, noOfReviews: 586 },
+            { name: 'Croissant', price: 40, imgSrc: "./images/croissant.png", id: 22, category: 'Bakery' ,avgRating: 4, noOfReviews: 434},
+            { name: 'Donut', price: 30, imgSrc: "./images/donut.png", id: 23, category: 'Bakery',avgRating: 4, noOfReviews: 984 },
+            { name: 'Cookies', price: 70, imgSrc: "./images/cookie.png", id: 24, category: 'Snacks' ,avgRating: 4.5, noOfReviews: 765},
+            { name: 'Popcorn', price: 80, imgSrc: "./images/popcorn.png", id: 25, category: 'Snacks',avgRating: 4, noOfReviews: 100 },
+            { name: 'Juice', price: 60, imgSrc: "./images/juice.png", id: 26, category: 'Beverages',avgRating: 5, noOfReviews: 900 },
+            { name: 'Water', price: 20, imgSrc: "./images/water.png", id: 27, category: 'Beverages',avgRating: 3.5, noOfReviews: 450 },
+            { name: 'Soap', price: 40, imgSrc: "./images/soap.png", id: 28, category: 'Personal Care' ,avgRating: 3, noOfReviews: 380},
+            { name: 'Lotion', price: 200, imgSrc: "./images/lotion.png", id: 29, category: 'Personal Care',avgRating: 4.5, noOfReviews: 500 },
+            { name: 'Peach', price: 90, imgSrc: "./images/peach.png", id: 30, category: 'Fruits',avgRating: 3.5, noOfReviews: 80 },
+            { name: 'Cream', price: 100, imgSrc: "./images/cream.png", id: 31, category: 'Dairy',avgRating: 2.5, noOfReviews: 700 },
+            { name: 'Muffin', price: 50, imgSrc: "./images/muffin.png", id: 32, category: 'Bakery' ,avgRating: 1.5, noOfReviews: 120},
+            { name: 'Candy', price: 10, imgSrc: "./images/candy.png", id: 33, category: 'Snacks' ,avgRating: 4, noOfReviews: 230},
+            { name: 'Tea', price: 30, imgSrc: "./images/tea.png", id: 34, category: 'Beverages',avgRating: 4, noOfReviews: 250 },
+            { name: 'Toothbrush', price: 20, imgSrc: "./images/toothbrush.png", id: 35, category: 'Personal Care',avgRating: 4.5, noOfReviews: 300 },
+            { name: 'Pear', price: 80, imgSrc: "./images/pear.png", id: 36, category: 'Fruits',avgRating: 4.5, noOfReviews: 100 },
+            { name: 'Ice Cream', price: 100, imgSrc: "./images/ice-cream.png", id: 37, category: 'Dairy',avgRating: 4.5, noOfReviews: 130 },
+        ];
+
+        // Get the corresponding product dat
+        var product = products[id]; // products[0] = products[1 - 1] = products[0] = { name: 'Tomato', price: 60, imgSrc: '', id: 1 }
+
+        // Populate the HTML elements with the product data
+        document.querySelector('.product-image img').src = product.imgSrc;
+        document.querySelector('.product-info h2').textContent = product.name;
+        document.querySelector('.product-info p').textContent = '₹' + product.price + '/Kg';
+        document.querySelector('.product-price h3').textContent = product.info ;
+        let stars = document.querySelectorAll('.product .stars i');
+        let rating = Math.floor(product.avgRating);
+        let isHalf = product.avgRating % 1 !== 0;
+
+        for (let i = 0; i < stars.length; i++) {
+            stars[i].classList.remove('fas', 'far', 'fa-star-half-alt');
+            stars[i].classList.add(i < rating ? 'fas' : 'far');
+        }
+
+        if (isHalf) {
+            stars[rating].classList.remove('far');
+            stars[rating].classList.add('fas');
+            stars[rating].classList.add('fa-star-half-alt');
+        }
+
+        document.querySelector('.product .stars span').textContent = '/ ' + product.noOfReviews + ' reviews';
+    </script>
+    <script>
+        function openmenu() {
+            document.getElementById("sidemenu").style.width = "100%";
+            document.getElementById("sidemenu").style.transition = "0.5s"
+        }
+
+        function closemenu() {
+            document.getElementById("sidemenu").style.width = "0";
+            document.getElementById("sidemenu").style.transition = "0.5s"
+        }
+        
+    </script>
+</body>
+
+</html>
