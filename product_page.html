@@ -153,7 +153,6 @@
         document.querySelector('.product-image img').src = product.imgSrc;
         document.querySelector('.product-info h2').textContent = product.name;
         document.querySelector('.product-info p').textContent = '₹' + product.price + '/Kg';
-        document.querySelector('.product-price h3').textContent = product.info ;
         let stars = document.querySelectorAll('.product .stars i');
         let rating = Math.floor(product.avgRating);
         let isHalf = product.avgRating % 1 !== 0;
